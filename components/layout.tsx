@@ -4,10 +4,15 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
+interface ILayout {
+  children: React.ReactNode
+  home?: boolean
+}
+
 const name = 'Your Name';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home }: ILayout): JSX.Element {
   return (
     <div className={styles.container}>
       <Head>
